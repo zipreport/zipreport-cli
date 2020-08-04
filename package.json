@@ -1,0 +1,25 @@
+{
+  "name": "zipreportserver-cli",
+  "version": "1.0.0",
+  "description": "ZipReport Server PDF conversion cli",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf build/",
+    "build:prepare": "mkdir -p build/ && cp -r src/ build/artifacts/ && cp package.json build/artifacts/ && cd build/artifacts/ && npm i --production",
+    "build:linux": "electron-packager build/artifacts/ zpt-cli --out=build/ --prune=true --overwrite --asar",
+    "build": "npm run clean && npm run build:prepare && npm run build:linux"
+  },
+  "bin": "./bin/zpt-cli",
+  "keywords": [],
+  "author": "jpinheiro",
+  "repository": "https://github.com/joao-pinheiro/zipreport-server.git",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^6.0.0",
+    "electron": "^9.1.1"
+  },
+  "devDependencies": {
+    "electron-packager": "^15.0.0"
+  }
+}
