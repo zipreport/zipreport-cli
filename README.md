@@ -1,4 +1,4 @@
-# zpt-cli
+# zipreport-cli
 
 Electron cli to convert html to pdf, adapted from [Athena PDF](https://github.com/arachnys/athenapdf) and ideas from 
 [Electron PDF](https://github.com/fraserxu/electron-pdf), under MIT license.
@@ -96,3 +96,7 @@ To build the zpt-cli binary in build/zpt-cli-\<arch\>/:
 npm install
 npm run build
 ```
+
+## Licensing
+
+zipreport-cli code is provided under MIT License. Due to the derivative nature of the code, original authorship from AthenaPDF is also preserved. Please check required libraries for their own licensing terms.
