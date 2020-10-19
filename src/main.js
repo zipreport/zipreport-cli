@@ -109,7 +109,7 @@ if (!process.defaultApp) {
 }
 
 zpt
-    .version("0.9.0")
+    .version("0.9.1")
     .description("Render HTML to to PDF")
     .option("--debug", "show GUI", false)
     .option("-T, --timeout <seconds>", "seconds before timing out (default: 60)", parseInt)
