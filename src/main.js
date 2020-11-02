@@ -46,6 +46,9 @@ function processAppOptions(opts) {
     // chrome crashes in docker, more info: https://github.com/GoogleChrome/puppeteer/issues/1834
     app.commandLine.appendArgument("disable-dev-shm-usage");
 
+    if (opts.security-opt) {
+        app.commandLine.appendSwitch("--security-opt", opts.security-opt);
+    }
     if (opts.proxy) {
         app.commandLine.appendSwitch("proxy-server", opts.proxy);
     }
@@ -109,7 +112,7 @@ if (!process.defaultApp) {
 }
 
 zpt
-    .version("0.9.1")
+    .version("0.9.2")
     .description("Render HTML to to PDF")
     .option("--debug", "show GUI", false)
     .option("-T, --timeout <seconds>", "seconds before timing out (default: 60)", parseInt)
@@ -128,6 +131,7 @@ zpt
     .option("--ignore-gpu-blacklist", "Enables GPU in Docker environment")
     .option("--js-event", "Wait for a js event (zpt-view-ready)")
     .option("--js-timeout <timeout>", "Timeout when waiting for event (default 8 seconds)", parseInt)
+    .option("--security-opt <options>", "Set chromium security options")
     .arguments("<URI> <output>")
     .action((uri, output) => {
         if (!uri) {

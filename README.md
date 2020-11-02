@@ -54,6 +54,7 @@ $ Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
 |--height| 768 | Window height in pixels for PNG export; Cannot be larger than framebuffer height.|
 |--js-event| | Wait for a javascript event named 'zpt-view-ready'. |
 |--js-timeout| 8| Seconds to wait for the javascript event. After the time has passed, the rendered is triggered regardless. |
+|--security-opt <options>| | Optional security options to pass to Chromium|
 
 ### Using JS event trigger
 
