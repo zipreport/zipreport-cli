@@ -46,8 +46,8 @@ function processAppOptions(opts) {
     // chrome crashes in docker, more info: https://github.com/GoogleChrome/puppeteer/issues/1834
     app.commandLine.appendArgument("disable-dev-shm-usage");
 
-    if (opts.security-opt) {
-        app.commandLine.appendSwitch("--security-opt", opts.security-opt);
+    if (opts.securityOpt) {
+        app.commandLine.appendSwitch("--security-opt", opts.securityOpt);
     }
     if (opts.proxy) {
         app.commandLine.appendSwitch("proxy-server", opts.proxy);
