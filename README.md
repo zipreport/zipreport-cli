@@ -55,6 +55,8 @@ $ Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
 |--js-event| | Wait for a javascript event named 'zpt-view-ready'. |
 |--js-timeout| 8| Seconds to wait for the javascript event. After the time has passed, the rendered is triggered regardless. |
 |--security-opt <options>| | Optional security options to pass to Chromium|
+|--no-sandbox| false| Disable Chromium sandbox (see below) |
+
 
 ### Using JS event trigger
 
@@ -97,6 +99,14 @@ To build the zpt-cli binary in build/zpt-cli-\<arch\>/:
 npm install
 npm run build
 ```
+
+## Security Notes - disabling Chromium sandbox
+
+Disabling the sandbox mode (--no-sandbox) may pose a serious security risk! Make sure you either trust any exernal web
+content passed to zipreport-cli, or run zipreport-cli inside a locked down virtual machine. Make yourself confortable with
+the (sandbox details)[https://chromium.googlesource.com/chromium/src/+/master/docs/design/sandbox_faq.md] so you can fully 
+understand the possible attack vectors you will be exposed to when disabling the sandbox.
+
 
 ## Licensing
 
