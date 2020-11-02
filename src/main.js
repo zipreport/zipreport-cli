@@ -75,7 +75,7 @@ function buildBrowserWindow(opts) {
         webPreferences: {
             nodeIntegration: false,
             webSecurity: true,
-            sandbox: true,
+            sandbox: !opts.noSandbox,
             enableRemoteModule: false, // prototype leaking
             allowRunningInsecureContent: !opts.insecure, // allow unsafe css/js
             zoomFactor: (opts.zoom || 1),
@@ -132,6 +132,7 @@ zpt
     .option("--js-event", "Wait for a js event (zpt-view-ready)")
     .option("--js-timeout <timeout>", "Timeout when waiting for event (default 8 seconds)", parseInt)
     .option("--security-opt <options>", "Set chromium security options")
+    .option("--no-sandbox", "Disable chromium sanbox (dangerous! see README")
     .arguments("<URI> <output>")
     .action((uri, output) => {
         if (!uri) {
