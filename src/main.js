@@ -49,6 +49,9 @@ function processAppOptions(opts) {
     if (opts.securityOpt) {
         app.commandLine.appendSwitch("--security-opt", opts.securityOpt);
     }
+    if (opts.noGpu) {
+        app.commandLine.appendSwitch("--disable-gpu")
+    }
     if (opts.proxy) {
         app.commandLine.appendSwitch("proxy-server", opts.proxy);
     }
@@ -112,7 +115,7 @@ if (!process.defaultApp) {
 }
 
 zpt
-    .version("0.9.2")
+    .version("0.9.3")
     .description("Render HTML to to PDF")
     .option("--debug", "show GUI", false)
     .option("-T, --timeout <seconds>", "seconds before timing out (default: 60)", parseInt)
@@ -133,6 +136,7 @@ zpt
     .option("--js-timeout <timeout>", "Timeout when waiting for event (default 8 seconds)", parseInt)
     .option("--security-opt <options>", "Set chromium security options")
     .option("--no-sandbox", "Disable chromium sanbox (dangerous! see README")
+    .option("--no-gpu", "Disable GPU acceleration")    
     .arguments("<URI> <output>")
     .action((uri, output) => {
         if (!uri) {

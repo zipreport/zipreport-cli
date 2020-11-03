@@ -56,7 +56,7 @@ $ Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
 |--js-timeout| 8| Seconds to wait for the javascript event. After the time has passed, the rendered is triggered regardless. |
 |--security-opt <options>| | Optional security options to pass to Chromium|
 |--no-sandbox| false| Disable Chromium sandbox (see below) |
-
+|--no-gpu| false| Disable GPU acceleration |
 
 ### Using JS event trigger
 
