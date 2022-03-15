@@ -50,7 +50,8 @@ function processAppOptions(opts) {
         app.commandLine.appendSwitch("--security-opt", opts.securityOpt);
     }
     if (opts.noGpu) {
-        app.commandLine.appendSwitch("--disable-gpu")
+        app.commandLine.appendSwitch("--disable-gpu");
+        app.disableHardwareAcceleration();
     }
     if (opts.proxy) {
         app.commandLine.appendSwitch("proxy-server", opts.proxy);
