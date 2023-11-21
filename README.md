@@ -1,5 +1,10 @@
 # zipreport-cli
 
+## ***ARCHIVAL NOTICE***
+zipreport-cli is deprecated; please use zipreport-server >= v2.0.0.
+
+---
+
 Electron cli to convert html to pdf, adapted from [Athena PDF](https://github.com/arachnys/athenapdf) and ideas from 
 [Electron PDF](https://github.com/fraserxu/electron-pdf), under MIT license.
 
